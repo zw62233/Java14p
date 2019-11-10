@@ -28,15 +28,19 @@ public class RectionDemo{
 		}
 	}
 	public static void hanoi(int n,int from,int to){
+		//汉诺塔游戏模型
+		//盘子数 柱子编号1 柱子编号2
+		//柱子：  0  1  2
 		if(n==1){
 			System.out.printf("从 %d 移动到 %d%n",from,to);
 		}else{
 			int other=3-from-to;
-			hanoi(n-1,from,to);
+			hanoi(n-1,from,other);
 			System.out.printf("从 %d 移动到 %d%n",from,to);
 			hanoi(n-1,other,to);
 		}
 	}
+	
 	public static void main(String[]args){
 		printNumber(9527);
 		System.out.println(sum(9527));
